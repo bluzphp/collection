@@ -1,0 +1,26 @@
+language: php
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+  - master
+matrix:
+  allow_failures:
+    - php: master
+install:
+  # Composer
+  - composer self-update
+  - COMPOSER_ROOT_VERSION=dev-master composer install
+before_script:
+  - mkdir .reports
+script:
+  # Check code style
+  - php vendor/bin/phpcs ./src --standard=PSR1,PSR2 --encoding=utf-8
+  # Check complexity of the code
+  - php vendor/bin/phploc ./src
+  # Run tests
+  - php vendor/bin/phpunit --coverage-clover=.reports/clover.xml
+after_success:
+  - travis_retry php vendor/bin/coveralls
+notifications:
+  email: false

@@ -1,2 +1,2 @@
-# collection
-Package Collection
+# Collection Component
+Component Collection
