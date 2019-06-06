@@ -11,10 +11,7 @@ declare(strict_types=1);
 use Bluz\Collection\Collection;
 
 /**
- * Simple functions of framework
- * be careful with this way
- *
- * @author   Anton Shevchuk
+ * Functions for Collection component
  */
 if (!function_exists('array_get')) {
     /**
@@ -46,26 +43,28 @@ if (!function_exists('array_has')) {
 
 if (!function_exists('array_add')) {
     /**
-     * @param       $array
-     * @param array ...$keys
+     * @param array $array
+     * @param mixed $key
+     * @param array ...$values
      *
      * @return void
      */
-    function array_add(array &$array, ...$keys)
+    function array_add(array &$array, $key, ...$values)
     {
-        Collection::add($array, ...$keys);
+        Collection::add($array, $key, ...$values);
     }
 }
 
 if (!function_exists('array_set')) {
     /**
-     * @param       $array
-     * @param array ...$keys
+     * @param array $array
+     * @param mixed $key
+     * @param array ...$values
      *
      * @return void
      */
-    function array_set(array &$array, ...$keys)
+    function array_set(array &$array, $key, ...$values)
     {
-        Collection::set($array, ...$keys);
+        Collection::set($array, $key, ...$values);
     }
 }
