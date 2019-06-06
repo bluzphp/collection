@@ -6,6 +6,7 @@
 
 namespace Bluz\Tests\Collection;
 
+use ArgumentCountError;
 use Bluz\Collection\Collection;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -32,8 +33,7 @@ final class CollectionTest extends TestCase
     protected function setUp(): void
     {
         $this->array = [
-            'hello' => [
-                'world',
+            'world' => [
                 'country' => ['Ukraine' => 1, 'Sweden' => 2]
             ],
             'foo' => 'bar',
@@ -49,9 +49,9 @@ final class CollectionTest extends TestCase
     public function dataForCorrectCheck(): array
     {
         return [
-            ['hello'],
-            ['hello', 'country'],
-            ['hello', 'country', 'Ukraine'],
+            ['world'],
+            ['world', 'country'],
+            ['world', 'country', 'Ukraine'],
             [1],
             [2],
             [3],
@@ -66,8 +66,8 @@ final class CollectionTest extends TestCase
     {
         return [
             ['hi'],
-            ['hello', 'city'],
-            ['hello', 'country', 'Russia'],
+            ['world', 'city'],
+            ['world', 'country', 'Russia'],
             ['foo', 'bar'],
             [3, 2],
             [4],
@@ -103,7 +103,7 @@ final class CollectionTest extends TestCase
      */
     public function testGetValue()
     {
-        self::assertEquals(1, Collection::get($this->array, 'hello', 'country', 'Ukraine'));
+        self::assertEquals(1, Collection::get($this->array, 'world', 'country', 'Ukraine'));
         self::assertEquals(2, Collection::get($this->array, 1));
         self::assertEquals(3, Collection::get($this->array, 2, 2));
     }
@@ -123,26 +123,26 @@ final class CollectionTest extends TestCase
      */
     public function testAddValue()
     {
-        Collection::add($this->array, 'hello', 'city', 'Kyiv');
-        Collection::add($this->array, 'hello', 'city', 'Kharkiv');
+        Collection::add($this->array, 'world', 'city', 'Kyiv');
+        Collection::add($this->array, 'world', 'city', 'Kharkiv');
         Collection::add($this->array, 2, 4);
         Collection::add($this->array, 3, 'd');
 
-        self::assertCount(2, Collection::get($this->array, 'hello', 'city'));
+        self::assertCount(2, Collection::get($this->array, 'world', 'city'));
         self::assertCount(4, Collection::get($this->array, 2));
         self::assertCount(3, Collection::get($this->array, 3, 3));
     }
 
-    public function testAddWithoutArguments()
-    {
-        $this->expectException(InvalidArgumentException::class);
-        Collection::add($this->array);
-    }
-
     public function testAddWithoutValue()
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(ArgumentCountError::class);
         Collection::add($this->array, 'hello');
+    }
+
+    public function testAddToInvalidElement()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        Collection::add($this->array, 'foo', 'bar');
     }
 
     /**
@@ -161,27 +161,27 @@ final class CollectionTest extends TestCase
      */
     public function testSetValue()
     {
-        Collection::set($this->array, 'hello', 'city', 'Kharkiv', 'point');
-        Collection::set($this->array, 'hello', 'country', 'Ukraine', 'Kyiv');
+        Collection::set($this->array, 'world', 'city', 'Kharkiv', 'point');
+        Collection::set($this->array, 'world', 'country', 'Ukraine', 'Kyiv');
         Collection::set($this->array, 1, 0);
         Collection::set($this->array, 2, [42]);
 
-        self::assertEquals('point', Collection::get($this->array, 'hello', 'city', 'Kharkiv'));
-        self::assertEquals('Kyiv', Collection::get($this->array, 'hello', 'country', 'Ukraine'));
+        self::assertEquals('point', Collection::get($this->array, 'world', 'city', 'Kharkiv'));
+        self::assertEquals('Kyiv', Collection::get($this->array, 'world', 'country', 'Ukraine'));
         self::assertEquals(0, Collection::get($this->array, 1));
         self::assertEquals(42, Collection::get($this->array, 2, 0));
     }
 
-    public function testSetWithoutArguments()
-    {
-        $this->expectException(InvalidArgumentException::class);
-        Collection::set($this->array);
-    }
-
     public function testSetWithoutValue()
     {
+        $this->expectException(ArgumentCountError::class);
+        Collection::set($this->array, 'world');
+    }
+
+    public function testSetToInvalidElement()
+    {
         $this->expectException(InvalidArgumentException::class);
-        Collection::set($this->array, 'hello');
+        Collection::set($this->array, 'world', 'country', 'Ukraine', 'road', 'e95');
     }
 
     /**
@@ -189,9 +189,9 @@ final class CollectionTest extends TestCase
      */
     public function testArraySetFunction()
     {
-        array_set($this->array, 'hello', 'country', 'Ukraine', 'Kyiv', 'Yes!');
+        array_set($this->array, 'world', 'city', 'Kyiv', '!');
 
-        self::assertTrue(isset($this->array['hello']['country']['Ukraine']['Kyiv']));
+        self::assertTrue(isset($this->array['world']['city']['Kyiv']));
     }
 
     /**
@@ -199,7 +199,7 @@ final class CollectionTest extends TestCase
      */
     public function testArrayHasFunction()
     {
-        self::assertTrue(array_has($this->array, 'hello', 'country', 'Ukraine'));
+        self::assertTrue(array_has($this->array, 'world', 'country', 'Ukraine'));
     }
 
     /**
@@ -207,6 +207,6 @@ final class CollectionTest extends TestCase
      */
     public function testArrayGetFunction()
     {
-        self::assertEquals(1, array_get($this->array, 'hello', 'country', 'Ukraine'));
+        self::assertEquals(1, array_get($this->array, 'world', 'country', 'Ukraine'));
     }
 }
