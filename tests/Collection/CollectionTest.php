@@ -71,6 +71,8 @@ final class CollectionTest extends TestCase
             ['foo', 'bar'],
             [3, 2],
             [4],
+            [4, 4],
+            [4, 4, 4],
         ];
     }
 

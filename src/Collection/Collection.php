@@ -33,6 +33,8 @@ class Collection
      *   Collection::get($arr, 'a', 1); // 20
      *   Collection::get($arr, 'a', 3); // null
      *   Collection::get($arr, 'c');    // null
+     *   Collection::get($arr, 'c', 0); // null
+     *   Collection::get($arr, 'c', 1); // null
      * </code>
      *
      * @param array $array
@@ -48,7 +50,7 @@ class Collection
             return $array[$key] ?? null;
         }
 
-        if (!is_array($array[$key])) {
+        if (!array_key_exists($key, $array) || !is_array($array[$key])) {
             return null;
         }
 
