@@ -1,4 +1,15 @@
 # Collection Component
+## Achievements
+
+[![PHP >= 7.3+](https://img.shields.io/packagist/php-v/bluzphp/collection.svg?style=flat)](https://php.net/)
+
+[![Latest Stable Version](https://img.shields.io/packagist/v/bluzphp/collection.svg?label=version&style=flat)](https://packagist.org/packages/bluzphp/collection)
+
+[![Build Status](https://img.shields.io/travis/bluzphp/collection/master.svg?style=flat)](https://travis-ci.org/bluzphp/collection)
+
+[![Total Downloads](https://img.shields.io/packagist/dt/bluzphp/collection.svg?style=flat)](https://packagist.org/packages/bluzphp/collection)
+
+[![License](https://img.shields.io/packagist/l/bluzphp/collection.svg?style=flat)](https://packagist.org/packages/bluzphp/collection)
 
 ## Usage
 
