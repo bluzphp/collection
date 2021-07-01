@@ -18,7 +18,6 @@ use PHPUnit\Framework\TestCase;
  * @package  Bluz\Tests\Common
  *
  * @author   Anton Shevchuk
- * @created  21.04.17 12:36
  */
 final class CollectionTest extends TestCase
 {
