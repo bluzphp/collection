@@ -14,7 +14,7 @@ before_script:
   - mkdir .reports
 script:
   # Check code style
-  - php vendor/bin/phpcs ./src --standard=PSR1,PSR2 --encoding=utf-8
+  - php vendor/bin/phpcs ./src --standard=PSR12 --encoding=utf-8
   # Check complexity of the code
   - php vendor/bin/phploc ./src
   # Run tests

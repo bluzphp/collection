@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Bluz Framework Component
  *
@@ -138,7 +139,7 @@ class Collection
                 $array[$key] = [];
             } elseif (!is_array($array[$key])) {
                 throw new InvalidArgumentException(
-                    '`Collection` can\'t change element with key `'.$key.'`, is not an array'
+                    '`Collection` can\'t change element with key `' . $key . '`, is not an array'
                 );
             }
             if (count($values)) {
@@ -181,7 +182,7 @@ class Collection
                 $key = array_shift($values);
                 if (!is_array($array)) {
                     throw new InvalidArgumentException(
-                        '`Collection` can\'t change element with key `'.$key.'`, is not an array'
+                        '`Collection` can\'t change element with key `' . $key . '`, is not an array'
                     );
                 }
             } else {
