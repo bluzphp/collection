@@ -7,6 +7,8 @@
 
 [![Build Status](https://img.shields.io/travis/bluzphp/collection/master.svg?style=flat)](https://travis-ci.org/bluzphp/collection)
 
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/bluzphp/collection.svg?style=flat)](https://scrutinizer-ci.com/g/bluzphp/collection/)
+
 [![Total Downloads](https://img.shields.io/packagist/dt/bluzphp/collection.svg?style=flat)](https://packagist.org/packages/bluzphp/collection)
 
 [![License](https://img.shields.io/packagist/l/bluzphp/collection.svg?style=flat)](https://packagist.org/packages/bluzphp/collection)

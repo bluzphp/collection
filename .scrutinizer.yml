@@ -14,8 +14,6 @@ checks:
 filter:
   excluded_paths: [bin, docs, docker, data, tests, vendor]
 tools:
-  external_code_coverage:
-    timeout: 600
   php_analyzer: true
   php_code_sniffer:
     config:
