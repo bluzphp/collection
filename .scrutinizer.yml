@@ -1,16 +1,23 @@
 build:
+  environment:
+    php: 8.0.0
   nodes:
     analysis:
       tests:
         override:
           - php-scrutinizer-run
-    coverage:
+    tests-and-coverage:
+      environment:
+        php:
+          ini:
+            "xdebug.mode": coverage
       tests:
         override:
+          - phpcs-run ./src --standard=PSR12 --encoding=utf-8
           - command: php vendor/bin/phpunit --coverage-clover=.reports/clover.xml
             coverage:
               file: .reports/clover.xml
-              format: clover
+              format: php-clover
 checks:
   php:
       psr2_switch_declaration: true
@@ -18,10 +25,12 @@ checks:
       no_short_open_tag: true
       deprecated_code_usage: true
       code_rating: true
+      duplication: true
 filter:
   excluded_paths: [bin, docs, docker, data, tests, vendor]
 tools:
   php_analyzer: true
+  php_code_coverage: true
   php_code_sniffer:
     config:
       standard: PSR12
