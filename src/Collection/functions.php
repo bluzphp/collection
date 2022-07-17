@@ -18,12 +18,12 @@ if (!function_exists('array_get')) {
     /**
      * Get value of array by keys
      *
-     * @param       $array
-     * @param array ...$keys
+     * @param array $array
+     * @param array $keys
      *
      * @return mixed|null
      */
-    function array_get(array $array, ...$keys)
+    function array_get(array $array, ...$keys): mixed
     {
         return Collection::get($array, ...$keys);
     }
@@ -31,12 +31,12 @@ if (!function_exists('array_get')) {
 
 if (!function_exists('array_has')) {
     /**
-     * @param       $array
-     * @param array ...$keys
+     * @param array $array
+     * @param array $keys
      *
      * @return bool
      */
-    function array_has(array $array, ...$keys)
+    function array_has(array $array, ...$keys): bool
     {
         return Collection::has($array, ...$keys);
     }
@@ -46,11 +46,11 @@ if (!function_exists('array_add')) {
     /**
      * @param array $array
      * @param mixed $key
-     * @param array ...$values
+     * @param array $values
      *
      * @return void
      */
-    function array_add(array &$array, $key, ...$values)
+    function array_add(array &$array, mixed $key, ...$values): void
     {
         Collection::add($array, $key, ...$values);
     }
@@ -60,11 +60,11 @@ if (!function_exists('array_set')) {
     /**
      * @param array $array
      * @param mixed $key
-     * @param array ...$values
+     * @param array $values
      *
      * @return void
      */
-    function array_set(array &$array, $key, ...$values)
+    function array_set(array &$array, mixed $key, ...$values): void
     {
         Collection::set($array, $key, ...$values);
     }

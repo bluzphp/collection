@@ -39,11 +39,11 @@ class Collection
      * </code>
      *
      * @param array $array
-     * @param array ...$keys
+     * @param array $keys
      *
      * @return mixed|null
      */
-    public static function get(array $array, ...$keys)
+    public static function get(array $array, ...$keys): mixed
     {
         $key = array_shift($keys);
 
@@ -78,7 +78,7 @@ class Collection
      * </code>
      *
      * @param array $array
-     * @param array ...$keys
+     * @param array $keys
      *
      * @link https://php.net/manual/function.isset.php
      * @link https://php.net/manual/function.array-key-exists.php
@@ -118,12 +118,12 @@ class Collection
      *
      * @param array $array
      * @param mixed $key
-     * @param array ...$values
+     * @param array $values
      *
      * @return void
      * @throws InvalidArgumentException
      */
-    public static function add(array &$array, $key, ...$values): void
+    public static function add(array &$array, mixed $key, ...$values): void
     {
         $countValues = count($values);
 
@@ -158,12 +158,12 @@ class Collection
      *
      * @param array $array
      * @param mixed $key
-     * @param array ...$values
+     * @param array $values
      *
      * @return void
      * @throws InvalidArgumentException
      */
-    public static function set(array &$array, $key, ...$values): void
+    public static function set(array &$array, mixed $key, ...$values): void
     {
         if (count($values) === 0) {
             throw new ArgumentCountError(

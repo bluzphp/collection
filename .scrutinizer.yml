@@ -19,7 +19,7 @@ tools:
   php_analyzer: true
   php_code_sniffer:
     config:
-      standard: PSR2
+      standard: PSR12
   php_cpd:
     enabled: true
     excluded_dirs: [bin, docs, docker, data, tests, vendor]
