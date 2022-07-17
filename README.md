@@ -5,7 +5,7 @@
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/bluzphp/collection.svg?label=version&style=flat)](https://packagist.org/packages/bluzphp/collection)
 
-[![Build Status](https://img.shields.io/travis/bluzphp/collection/master.svg?style=flat)](https://travis-ci.org/bluzphp/collection)
+[![Build Status](https://img.shields.io/scrutinizer/build/g/bluzphp/collection)](https://scrutinizer-ci.com/g/bluzphp/collection/build-status/master)
 
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/bluzphp/collection.svg?style=flat)](https://scrutinizer-ci.com/g/bluzphp/collection/)
 
