@@ -24,7 +24,7 @@ final class CollectionTest extends TestCase
     /**
      * @var array
      */
-    protected $array;
+    protected array $array;
 
     /**
      * Sets up the fixture, for example, opens a network connection.

@@ -3,12 +3,12 @@
     "description": "Collection package",
     "type": "library",
     "require": {
-        "php": ">=7.4"
+        "php": ">=8.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.5",
-        "php-coveralls/php-coveralls": "~2.4",
-        "squizlabs/php_codesniffer": "~3.6",
+        "php-coveralls/php-coveralls": "~2.5",
+        "squizlabs/php_codesniffer": "~3.7",
         "phploc/phploc": "~7.0"
     },
     "autoload": {
@@ -18,6 +18,11 @@
         "files": [
             "src/Collection/functions.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bluz\\Tests\\": "tests/"
+        }
     },
     "authors": [
         {
