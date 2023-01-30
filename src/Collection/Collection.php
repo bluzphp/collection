@@ -18,6 +18,7 @@ use InvalidArgumentException;
  * Collection is array :)
  *
  * @package  Bluz\Collection
+ *
  * @author   Anton Shevchuk
  */
 class Collection
