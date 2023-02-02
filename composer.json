@@ -3,7 +3,7 @@
     "description": "Collection package",
     "type": "library",
     "require": {
-        "php": ">=8.0"
+        "php": ">=8.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.5",
@@ -23,6 +23,9 @@
         "psr-4": {
             "Bluz\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     },
     "authors": [
         {
