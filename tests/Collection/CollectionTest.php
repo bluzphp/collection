@@ -46,7 +46,7 @@ final class CollectionTest extends TestCase
     /**
      * @return array
      */
-    public function dataForCorrectCheck(): array
+    public static function dataForCorrectCheck(): array
     {
         return [
             ['world'],
@@ -62,7 +62,7 @@ final class CollectionTest extends TestCase
     /**
      * @return array
      */
-    public function dataForIncorrectCheck(): array
+    public static function dataForIncorrectCheck(): array
     {
         return [
             ['hi'],
