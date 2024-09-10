@@ -1,7 +1,7 @@
 # Collection Component
 ## Achievements
 
-[![PHP >= 8.0+](https://img.shields.io/packagist/php-v/bluzphp/collection.svg?style=flat)](https://php.net/)
+[![PHP >= 8.2+](https://img.shields.io/packagist/php-v/bluzphp/collection.svg?style=flat)](https://php.net/)
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/bluzphp/collection.svg?label=version&style=flat)](https://packagist.org/packages/bluzphp/collection)
 
