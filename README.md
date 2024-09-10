@@ -1,7 +1,7 @@
 # Collection Component
 ## Achievements
 
-[![PHP >= 8.0+](https://img.shields.io/packagist/php-v/bluzphp/collection.svg?style=flat)](https://php.net/)
+[![PHP >= 8.2+](https://img.shields.io/packagist/php-v/bluzphp/collection.svg?style=flat)](https://php.net/)
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/bluzphp/collection.svg?label=version&style=flat)](https://packagist.org/packages/bluzphp/collection)
 
@@ -15,7 +15,7 @@
 
 ## Usage
 
-Example of array:
+Example of an array:
 ```php
 $arr = [
     'a', 
@@ -35,7 +35,7 @@ $arr = [
 ];
 ```
 
-### Check element by key(s) 
+### Check the element by key(s) 
 
 Usage:
 ```php
@@ -59,7 +59,7 @@ Compare to `isset()`:
 isset($array['e']); // false
 ```
 
-### Get element by key(s) 
+### Get the element by key(s) 
 
 Usage:
 ```php
@@ -77,7 +77,7 @@ array_get($array, 'e');       // null
 array_get($array, 'e', 'e');  // null
 ```
 
-### Add element to the array by key(s) 
+### Add the element to the array by key(s) 
 
 Usage:
 ```php
@@ -95,7 +95,7 @@ array_add($array, 'g', 'g1', 'g1.1');   // $array['g']['g1'][] = 'g1.1'
 array_add($array, 'b', 'b1');           // InvalidArgumentException - $array['b'] is not an array
 ```
 
-### Set element of the array by key(s)
+### Set the element of the array by key(s)
 
 This method is similar to native way.
 

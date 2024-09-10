@@ -10,6 +10,7 @@ namespace Bluz\Tests\Collection;
 use ArgumentCountError;
 use Bluz\Collection\Collection;
 use InvalidArgumentException;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -79,10 +80,9 @@ final class CollectionTest extends TestCase
     /**
      * Test has class
      *
-     * @dataProvider dataForCorrectCheck
-     *
      * @param array $keys
      */
+    #[DataProvider('dataForCorrectCheck')]
     public function testHasReturnTrue(...$keys)
     {
         self::assertTrue(Collection::has($this->array, ...$keys));
@@ -91,10 +91,9 @@ final class CollectionTest extends TestCase
     /**
      * Test has class
      *
-     * @dataProvider dataForIncorrectCheck
-     *
      * @param array $keys
      */
+    #[DataProvider('dataForIncorrectCheck')]
     public function testHasReturnFalse(...$keys)
     {
         self::assertFalse(Collection::has($this->array, ...$keys));
@@ -111,10 +110,9 @@ final class CollectionTest extends TestCase
     }
 
     /**
-     * @dataProvider dataForIncorrectCheck
-     *
      * @param array $keys
      */
+    #[DataProvider('dataForIncorrectCheck')]
     public function testGetNul(...$keys)
     {
         self::assertNull(Collection::get($this->array, ...$keys));
